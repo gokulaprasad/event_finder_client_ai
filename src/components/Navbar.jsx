@@ -31,6 +31,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Dashboard', path: '/dashboard', icon: Calendar },
     { name: 'My Events', path: '/profile', icon: Heart },
+    ...(user?.role === 'admin' ? [{ name: 'Admin', path: '/admin', icon: Shield }] : []),
   ];
 
   const organizerLinks = [

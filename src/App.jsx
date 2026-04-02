@@ -16,6 +16,7 @@ import EventDetails from './pages/EventDetails';
 import CreateEvent from './pages/CreateEvent';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
@@ -62,6 +63,14 @@ function App() {
                   element={
                     <ProtectedRoute>
                       <Chat />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/admin"
+                  element={
+                    <ProtectedRoute requireAdmin>
+                      <AdminDashboard />
                     </ProtectedRoute>
                   }
                 />
